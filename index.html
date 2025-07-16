@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="estilo.css" rel="stylesheet">
+    <!--Fuente-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Diario de lecturas</title>
+</head>
+<body>
+    <main>
+        <section class="barra-superior">
+            <button id="toggle-recomendador">⬅ Ocultar recomendador</button>
+            <h1>Diario de lecturas</h1>
+            <p>bitácora literaria con recomendaciones personalizadas</p>
+        </section>
+        <section class="contenedor">
+
+            <section class="seccion-recomendaciones" id="seccion-recomendaciones">
+                <h2>Recomendaciones</h2>
+                <p>Libros seleccionados de la API Open Library</p>
+                <form class="recomendaciones-form">
+                <div class="genero-rec">
+                    <label for="genero-rec">¿Qué te gustaría leer?</label>
+                    <select name="genero-rec"  id="genero-rec" required>
+                    <option value="">Cualquier género</option>
+                    <option value="fantasía">Fantasía</option>
+                    <option value="ciencia ficción">Ciencia Ficción</option>
+                    <option value="romance">Romance</option>
+                    <option value="misterio">Misterio</option>
+                    <option value="terror">Terror</option>
+                    <option value="no ficción">No Ficción</option>
+                    <option value="histórico">Histórico</option>
+                </select>
+                </div>
+                <button id="boton-recomendacion">Buscar recomendación</button>
+                </form>
+                <div id="recomendaciones"></div>
+            </section>
+
+            <section class="registro" id="registro">
+                
+
+        <!--Formulario-->      
+                <form id="form-libro">
+                    <fieldset>
+                    <legend>Registrá tu última lectura</legend>
+                    <label for="titulo">Título:</label> 
+                    
+                    <input type="text" id= "titulo" name="titulo" required>
+
+                    <label for="autor">Autor:</label> 
+                    <input type="text" name="autor" id="autor" required>
+
+                    <label for="genero">Género:</label>
+                        <select name="genero"  id="genero" required>
+                        <option value="">Seleccioná un género</option>
+                        <option value="fantasía">Fantasía</option>
+                        <option value="ciencia ficción">Ciencia Ficción</option>
+                        <option value="romance">Romance</option>
+                        <option value="misterio">Misterio</option>
+                        <option value="terror">Terror</option>
+                        <option value="no ficción">No Ficción</option>
+                        <option value="histórico">Histórico</option>
+                    </select>
+                    
+                    <label for="puntos">Puntuación (1-5):</label>
+                    <input type="number" id="puntos" name="puntos" min="1" max="5">
+
+                    <label for="mes">Mes:</label>
+                    <select name="mes" id="mes" required>
+                        <option value="">Seleccioná un mes</option>
+                        <option value="enero">Enero</option>
+                        <option value="febrero">Febrero</option>
+                        <option value="marzo">Marzo</option>
+                        <option value="abril">Abril</option>
+                        <option value="mayo">Mayo</option>
+                        <option value="junio">Junio</option>
+                        <option value="julio">Julio</option>
+                        <option value="agosto">Agosto</option>
+                        <option value="septiembre">Septiembre</option>
+                        <option value="octubre">Octubre</option>
+                        <option value="noviembre">Noviembre</option>
+                        <option value="diciembre">Diciembre</option>
+                    </select>
+
+                    <button type="submit">Agregar libro</button>
+                    </fieldset>
+                </form>
+        <!--Libros leídos-->        
+                <section id="libros-leidos">
+                    <div class="seccion-mes"><h2>Enero</h2>
+                        <div class="libros-del-mes" id="enero"></div>
+                    </div>
+                        
+                    <div class="seccion-mes"><h2>Febrero</h2>
+                        <div class="libros-del-mes" id="febrero"></div>
+                    </div>
+
+                    <div class="seccion-mes"><h2>Marzo</h2>
+                        <div class="libros-del-mes" id="marzo"></div>
+                    </div>
+
+                    <div class="seccion-mes"><h2>Abril</h2>
+                        <div class="libros-del-mes" id="abril"></div>
+                    </div>
+
+                    <div class="seccion-mes"><h2>Mayo</h2>
+                        <div class="libros-del-mes" id="mayo"></div>
+                    </div>
+
+                    <div class="seccion-mes"><h2>Junio</h2>
+                        <div class="libros-del-mes" id="junio"></div>
+                    </div>
+
+                    <div class="seccion-mes"><h2>Julio</h2>
+                        <div class="libros-del-mes" id="julio"></div>
+                    </div>
+
+                    <div class="seccion-mes"><h2>Agosto</h2>
+                        <div class="libros-del-mes" id="agosto"></div>
+                    </div>
+
+                    <div class="seccion-mes"><h2>Septiembre</h2>
+                        <div class="libros-del-mes" id="septiembre"></div>
+                    </div>
+
+                    <div class="seccion-mes"><h2>Octubre</h2>
+                        <div class="libros-del-mes" id="octubre"></div>
+                    </div>
+
+                    <div class="seccion-mes"><h2>Noviembre</h2>
+                        <div class="libros-del-mes" id="noviembre"></div>
+                    </div>
+
+                    <div class="seccion-mes"><h2>Diciembre</h2>
+                        <div class="libros-del-mes" id="diciembre"></div>
+                    </div> 
+
+                </section>
+            </section>
+    <!--Recomendador-->
+            
+        </section>
+        <script src="script.js"></script>
+    <footer>
+        <p>Hecho por Aldana Loureyro para el curso de Front-End JS de Talento Tech</p>
+        <img src="imagen/book.png" alt="Dibujo de un libro">
+    </footer>
+    </main>
+
+</body>
+</html>
